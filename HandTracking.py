@@ -104,7 +104,7 @@ class handDetector():
 
         return img
 
-    def mouseAction(self, img, keys):
+    def mouseAction(self, img):
         imgRGB = cv2.cvtColor(img, 1)
         self.results = self.hands.process(imgRGB)
         if self.results.multi_hand_landmarks:
