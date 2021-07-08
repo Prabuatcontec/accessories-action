@@ -23,6 +23,7 @@ cap = cv2.VideoCapture(0)
 alpha = 0.6
 
 
+
 lol = 0
 vop = None
 detector= htm.handDetector(detectionCon=0.75)
@@ -35,7 +36,7 @@ while True:
     background=cv2.resize(background,(350,350))
     background = cv2.flip(background,1)
     background = detector.findHands(background)
-    background = detector.mouseAction(background, keys)
+    background = detector.mouseAction(background)
     blurred = cv2.GaussianBlur(background, (11, 11), 0)
     hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
     
